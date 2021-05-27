@@ -6,7 +6,7 @@ import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <MaskInput />
+    <MaskInput mask="+7 (911)-ddd-dd-dd" mask_symbol = "_" />
   </React.StrictMode>,
   document.getElementById('root')
 );

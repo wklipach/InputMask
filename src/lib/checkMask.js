@@ -26,4 +26,4 @@ function checkMask(result, mask, mask_symbol) {
    return result;
 }
 
-  export default checkMask;
+export {checkMask};

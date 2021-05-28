@@ -5,7 +5,7 @@ import isInteger from '../lib/isInteger';
 import isNotEmpty from '../lib/isNotEmpty';
 import onlyinteger from '../lib/onlyinteger';
 import deleteMultiValue from '../lib/deleteMultiValue';
-import checkMask from '../lib/checkMask';
+import {checkMask} from '../lib/checkMask';
 
 
 function useInput(defaultValue) {
@@ -94,8 +94,11 @@ function useInput(defaultValue) {
         }
   
         if (maskLetter !== "d") {
-          setNewLetter({key: maskLetter, sel: e.target.selectionStart});
-          setOffsetCursor(mask.slice(e.target.selectionStart).indexOf("d"));
+          let selSt = mask.slice(e.target.selectionStart).indexOf("d");
+          if (!isInteger(e.key)) {
+            selSt--; 
+          }
+          setNewLetter({key: e.key, sel: e.target.selectionStart + selSt});
         }
   
       } else {

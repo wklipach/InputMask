@@ -14,7 +14,6 @@ function MaskInput(props) {
   return (<div>
     <label className="Input-date">Ввод данных:</label>
     <input  {...inputProps} className="Label-date"></input>
-    <span>Value: {inputProps.value} </span>
     </div>
   );
 }
